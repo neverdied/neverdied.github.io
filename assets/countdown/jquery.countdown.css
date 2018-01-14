@@ -1,9 +1,12 @@
 .countdownHolder{
-	width:250px;
-	margin:0 auto;
+	width: 250px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: 0px;
+	margin-bottom: 0;
 	font: 40px/1.5 'Open Sans Condensed',sans-serif;
-	text-align:center;
-	letter-spacing:-3px;
+	text-align: center;
+	letter-spacing: -3px;
 }
 
 .position{
