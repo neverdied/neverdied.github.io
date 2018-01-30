@@ -17,13 +17,13 @@
 			
 			var message = "";
 			
-			message += "距离考研还有"+days + " 天"  + ", ";
-			message += hours + " 时"+ ", "+ " <br />";
+			message += "距离考研还有"+days + " 天"  + ", "+ " <br />";
+			message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+hours + " 时"+ ", "+ " <br />";
 			message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+minutes + " 分"+ ", "+ " <br />";
-			message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+seconds + " 秒"+ " <br />";
+			message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+seconds + " 秒";
 			
 			if(newYear){
-				message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp！！！";
+				message += "！！！";
 			}
 			else {
 				message += "距离现在10天!";
