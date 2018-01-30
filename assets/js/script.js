@@ -18,12 +18,12 @@
 			var message = "";
 			
 			message += "距离考研还有"+days + " 天"  + ", ";
-			message += hours + " 时"+ ", ";
-			message += minutes + " 分"+ ", ";
-			message += seconds + " 秒"+ " <br />";
+			message += hours + " 时"+ ", "+ " <br />";
+			message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+minutes + " 分"+ ", "+ " <br />";
+			message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+seconds + " 秒"+ " <br />";
 			
 			if(newYear){
-				message += "！！！";
+				message += "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp！！！";
 			}
 			else {
 				message += "距离现在10天!";
