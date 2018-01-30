@@ -82,9 +82,5 @@ $(function(){
 
 
 	// comment toggle
-	$('#comment_box a').click(function(e){
-		$('#disqus_thread').toggle();
-		return false;
-	});
 
 });
