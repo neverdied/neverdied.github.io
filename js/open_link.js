@@ -184,7 +184,7 @@
 					
 					break;
 					case 'xingmengyinyue':
-					window.open('http://yidin.top/mp3/index.php');
+					window.open('http://music.sonimei.cn/');
 					break;
 					$(function() {
     config = {
