@@ -55,7 +55,7 @@
 					window.open('http://www.kankanwu.com/index.php?s=vod-search-wd-'+o.value+'.html');
 					break;
 				case 'cilimao':
-					window.open('http://www.cilimao.me/search?word='+o.value+'&page=1');
+					window.open('https://www.cilimao.me/search?word='+o.value+'&page=1');
 					break;
 				case 'baiduyingshi':
 					window.open('http://v.baidu.com/v?word='+o.value+'&ct=301989888&rn=27&pn=0&db=0&s=0&fbl=800&ie=utf-8');
