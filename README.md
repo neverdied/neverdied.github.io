@@ -4,5 +4,5 @@
 
 ![超人搜索](超人搜索.png)
 
-[超人搜索](https://neverdied.github.io/)
+网址：[超人搜索](https://neverdied.github.io/)
 
