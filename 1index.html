@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" />
+       
+        <link rel="stylesheet" href="assets/countdown/jquery.countdown.css" />
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link rel="stylesheet" type="text/css">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<script type="text/javascript" src="js/jquery.js"></script>
+<link href="css/default.css" rel="stylesheet" type="text/css">
+
+
+	<meta charset="utf-8">
+<style type="text/css">
+		body{
+	font-family: "ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	background:url(image/向死而生.jpg);
+		}
+	
+	a:link {color: #00B388}
+	a:visited {color: #00B388}
+	a:hover {color: #74D6C2} 
+
+  	  .content{
+  	  	margin: 17% 0 0 0;
+  	  	width:100%;
+  	  	height: auto;
+  	  	float: left;
+  	  	font-family: "ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; 
+  	  	
+ 	  }
+  	  .kw{
+  	  	display:inline-block;
+  	  	height:4%;
+  	  	width:19%; 
+  	  	vertical-align: top;
+  	  	margin-top: 1%;
+  	  	margin-left: 1%;
+  	  	position: fixed;
+  	  }
+
+  	  .kw input{
+	width: 100%;
+	height: 200%;
+	font-size: 250%;
+	color: white;
+	border-width: 0px;
+	border-radius: 30px;
+	background-color: gray;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0%;
+	font-family: "ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", sans-serif;
+	outline: none;
+  	  }
+
+  	  .searchicon{
+  	  	z-index: 2;
+  	  	position: absolute;
+		margin-left: 87%;
+  	  }
+
+  	  .info{
+  	  	position: fixed;
+  	  	bottom: 4%;
+  	  	width:19%; 
+  	  	font-family:"ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; 
+  	  	font-size: 1%; 
+  	  	color: #6F6F6F;
+
+
+  	  }
+  	  .popular{
+  	  	display: inline-block;
+  	  	width: 70px;
+  	  	margin-left: 23%;
+  	  	padding-top: 1% ;
+  	  }
+  	  .entrances{
+  	  	display: inline-block;
+		  vertical-align: top;
+  	  	width: 70%;
+  	  	vertical-align: top;
+		  position:absolute;
+		  top:0px;
+		  right:0.5vw;
+  	  }
+	 .entrances1{
+  	  	display: inline-block;
+  	  	vertical-align: top;
+  	  	width: 70%;
+		margin-left:29.5vw;
+  	  }
+  	  .catalog{
+  	  	float: left;
+  	  	width: 20%;
+  	  	background: #2B2B2B;
+  	  	height: 30%;
+  	  	position: relative;
+  	  	margin: 1% 1% 1% 1%;
+  	  }
+  	  .catalogname{
+  	  	font-size: 200%;
+  	  	font-weight: 50%;
+  	  	text-align: center;
+  	  	margin: 0;
+  	  	color: #00B388;
+  	  
+  	  	font-family:"ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; 
+  	  }
+  	  .pop{
+  	  	display:inline-block;
+  	  	width:80%;
+  	  	height:80%;
+  	  	border-radius: 100%;
+  	  	box-shadow: 0% 1% 1% 1% rgba(0, 0, 0, 1);
+  	  	border: 6% white;
+  	  }
+  	  .more_list {
+  	  	background: #333333;
+  	  	position: absolute;
+  	  	z-index: 2;
+  	  	height: auto;
+  	  	box-shadow: -1% 1% 1% rgba(0, 0, 0, 0.2),
+			  	  	0% -1% 0% #333,
+  	  				1% 1% 1% rgba(0, 0, 0, 0.2),
+  	  				0% 1% 1% rgba(0, 0, 0, 0.2);
+  	  }
+
+  	
+	  .top{
+  	  	text-align: center;
+  	  }
+	.top1{
+		text-align: left;
+	}
+  	 .top1 img {
+  cursor: pointer;
+		  width:4vw;
+		  height:4vw;
+		 margin-left: 0.8vw;
+  	  } 
+	.top img {
+  	  	cursor: pointer;
+  	  }
+
+  	  .topicon{
+  	  	display:inline-block;
+  	  	
+  	  	width:50%;
+  	  	height: 70%;
+  	  	border-radius: 200%;
+  	  	box-shadow: 0% 1% 1% 0% rgba(0, 0, 0, 1);
+  	  	border: 1% white;
+  	  }
+  	  .topname{
+  	  	display:block;
+  	  	margin: 0;
+  	  	font-size: 200%;
+  	  	font-weight: 100;
+  	  	font-family:"ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; 
+  	  	color: white;
+  	  	
+  	  }
+  	  .catalog .sub{
+  	  	display:inline-block;
+  	  	width:100%;
+  	  	margin-top: 0%;
+  	  	height: 30%;
+  	  	display:block;
+  	  	position: relative;
+  	  }
+
+  	  .subicon{
+  	  	display:inline-block;
+  	  	width: 3vw;
+  	  	height: 3vw;
+  	  	border-radius: 200%;
+  	  	box-shadow: 0% 1% 3% 1% rgba(0, 0, 0, 1);
+  	  	margin: 1% 0% 0% 2%;
+  	  }
+  	  .subname{
+  	  	display:inline-block;
+  	  	margin:8% 0 0 8%;
+  	  	padding-top: 5%;
+  	  	font-size: 100%;
+  	  	line-height: ;
+  	  	vertical-align: top;
+  	  	font-family:"ff-nuvo-web-pro-1","ff-nuvo-web-pro-2", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; 
+  	  	line-height: 90%;
+  	  	word-break: break-all;
+  	  	color: #C4C4C4;
+  	  }
+  	</style>
+    <title>超人搜索</title>
+  
+    <link rel="shout icon" href="子网页\1.ico">
+
+    
+</head>
+
+<body>
+	
+	<div class='kw'>
+	<img src="image/searchicon.png" class="searchicon">
+		<input  id="kw" placeholder="输入关键字" autocomplete="off"><br>
+	  <h1 align="center"><span style="color: #00B388; font-size: 30px; margin-left: -30px;">距考研还有：</span></h1>
+		<br/>
+		<div id="countdown" align="left"></div>
+		<p id="note" style="color:red;></p>
+<h1 align="center"><span style="color:#00B388;">&nbsp;作者说：</span></h1>
+		<br/>
+    <div style="width:200px;height:150px;overflow:hidden;border:0px"> 
+     
+       <img src="今日言.PNG">
+      
+
+</div>
+&nbsp; 
+<a href="http://blog.csdn.net/qq_40404451/article/details/78953758"target="_blank">建议</a>
+&nbsp;&nbsp;&nbsp;<a href="子网页\说明.html"target="_blank">使用说明</a>&nbsp;&nbsp;&nbsp;
+<a href="http://zhouxinwen.top"target="_blank">博客</a>
+		</div>
+		
+	<div class="info">
+		<p >输入关键词,点击右边的网站,即在那个网站里搜索。<a href="http://zhouxinwen.top"target="_blank">作者</a>模仿<a href="http://lackar.com/aa/"target="_blank">AA</a>制作。
+</p>
+			</div>
+		</div>
+
+		<div class='popular'>
+		<p class='catalogname'>常用</p>
+			<div class='top1'>
+			<img  id='cainiaojiaocheng' class="pop" src="image/菜鸟教程.ico" title="菜鸟教程" onclick='search(this)' />
+			</div>
+			
+			<div class='top1'>
+				<img id='xiangkeyuan' class="pop" src="image/湘科院.jpg" title="湘科院" onClick='search(this)' />
+			</div>
+			<div class='top1'>
+				<img id='lvmeng' class="pop" src="image/绿盟.jpg" title="绿色软件联盟" onClick='search(this)' />
+			</div>
+			<div class='top1'>
+				<img id='doubanpingfen' class="pop" src="image/豆瓣.png" title="豆瓣评分" onClick='search(this)' />
+			</div>
+				<div class='top1'>
+				<img id='kugouyinyue' class="pop" src="image/酷狗.ico" title="酷狗音乐" onClick='search(this)' />
+			</div>
+		</div>
+
+<div class='entrances'>
+<div class='catalog'>
+		<p class='catalogname' >传统搜索</p>
+		<div class='top'>
+		<img  id='baidu' src="image/baidu.png" class="topicon" onclick='search(this)' />
+		<p class='topname'>百度</p>
+		</div>
+		<div class='sub'>
+		<img  id='gobaidugle'  data-original="image/许茂山.jpg"  class="subicon" onclick='search(this)' /><p class='subname'>谷百度歌</p>
+		</div>
+		<div class='sub'>
+			<img id='biyingsousuo'  data-original="image/必应.ico" class="subicon"
+			onclick='search(this)'/><p class='subname'>必应搜索</p>
+		</div>
+		<div class='sub'>
+			<img id='chongbuluo'  data-original="image/悟空.jpg" class="subicon"
+			onclick='search(this)'/><p class='subname'>虫部落搜索</p>
+		</div>
+		</div>
+		
+<div class='catalog'>
+		<p class='catalogname'>影视</p>
+		<div class='top'>
+		<img  id='neets' class="topicon" src="image/视频.jpeg"  onclick='search(this)' /><p class='topname'>neets</p>
+		</div>
+		<div class='sub'>
+			<img id='kankanwu'  data-original="image/马身人首.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>看看屋</p>
+		</div>
+		<div class='sub'>
+			<img id='cilimao'  data-original="image/狸猫.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>磁力猫搜索</p>
+		</div>
+		<div class='sub'>
+			<img id='baiduyingshi'  data-original="image/百度影视.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>百度影视</p>
+		</div>
+		</div>
+
+<div class='catalog'>
+		<p class='catalogname'>新闻</p>
+		<div class='top'>
+		<img  id='jinritoutiao' src="image/今日头条.png"  class="topicon" onclick='search(this)' /><p class='topname'>今日头条</p>
+		</div>
+		<div class='sub'>
+			<img id='baiduxinwen'  data-original="image/百度新闻 .jpg" class="subicon" onclick='search(this)' /><p class='subname'>百度新闻</p>
+		</div>
+		<div class='sub'>
+			<img id='fenghuangxinwen'  data-original="image/凤凰网.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>凤凰新闻</p>
+		</div>
+		<div class='sub'>
+			<img id='yangshiwang'  data-original="image/央视网.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>央视网</p>
+		</div>
+		</div>
+		
+<div class='catalog'>
+		<p class='catalogname'>读书</p>
+		<div class='top'>
+		<img  id='baojian' src="image/读书.jpg"  class="topicon" onclick='search(this)' /><p class='topname'>小说阅读</p>
+		</div>	
+		<div class='sub'>
+			<img id='doubandushu'  data-original="image/豆瓣读书.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>豆瓣读书</p>
+		</div>
+		<div class='sub'>
+			<img id='doubanyuedu'  data-original="image/doubanbook.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>豆瓣阅读</p>
+		</div>
+		<div class='sub'>
+			<img id='jioumosousuo'  data-original="image/鸠摩搜索.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>鸠摩搜索</p>
+		</div>
+		</div>
+	</div>
+		
+<div class='entrances1'>
+<div class='catalog'>
+		<p class='catalogname'>音乐</p>	
+		<div class='top'>
+		<img  id='kugouyinyue' class="topicon" src="image/酷狗.ico"  onclick='search(this)' /><p class='topname'>酷狗音乐</p>
+		</div>
+		<div class='sub'>
+			<img id='laoDyinyue'  data-original="image/老D.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>老D音乐</p>
+		</div>
+		<div class='sub'>
+			<img id='wangyiyunyinyue'  data-original="image/网易云.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>网易云音乐</p>
+		</div>
+		<div class='sub'>
+			<img id='wusunyinyue'  data-original="image/无损音乐.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>无损音乐</p>
+		</div>
+		</div>
+
+
+<div class='catalog'>
+		<p class='catalogname'>购物</p>
+		<div class='top'>
+		<img  id='taobao' class="topicon" src="image/taobao.jpg"   onclick='search(this)' /><p class='topname'>淘宝</p>
+		</div>
+		<div class='sub'>
+			<img id='jindong'  data-original="image/京东.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>京东</p>
+		</div>
+		<div class='sub'>
+			<img id='biyibijia'  data-original="image/比一比价.ico" class="subicon"
+			onclick='search(this)' /><p class='subname'>比一比价</p>
+		</div>
+		<div class='sub'>
+			<img id='xitie'  data-original="image/赛亚人.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>价格查询</p>
+		</div>
+		</div>
+	
+<div class='catalog'>
+		<p class='catalogname'>图片</p>
+		<div class='top'>
+		<img  id='baidutupian' src="image/百度图片.png" class="topicon" onclick='search(this)' /><p class='topname'>百度图片</p>
+		</div>
+		<div class='sub'>
+			<img id='duitangwang'  data-original="image/甜心熊.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>堆糖网</p>
+		</div>
+		<div class='sub'>
+			<img id='yingwentupiansousuo'  data-original="image/李.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>英文图片</p>
+		</div>
+		<div class='sub'>
+			<img id='sougoutupian'  data-original="image/狗.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>搜狗图片</p>
+		</div>
+		</div>
+				<div class='catalog'>
+		<p class='catalogname'>湘科院</p>
+		<div class='top'>
+		<img  id='xiangkeyuan' class="topicon" src="image/湘科院.jpg"   onclick='search(this)' /><p class='topname'>服务中心</p>
+		</div>
+		<div class='sub'>
+			<img id='xiaoyuanxinwen'  data-original="image/校园新闻.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>校园新闻</p>
+		</div>
+		<div class='sub'>
+			<img id='doubanpingfen'  data-original="image/豆瓣.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>豆瓣评分</p>
+		</div>
+		<div class='sub'>
+			<img id='keyuanguanwang'  data-original="image/莲花.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>科院官网</p>
+		</div>
+		</div>
+		
+<div class='catalog'>
+		<p class='catalogname'>百科</p>
+		<div class='top'>
+		<img  id='baidubaike' class="topicon" src="image/百度百科.png"  onclick='search(this)' /><p class='topname'>百度百科</p>
+		</div>
+		<div class='sub'>
+			<img id='hudongbaike'  data-original="image/互动百科.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>互动百科</p>
+		</div>
+		<div class='sub'>
+			<img id='weixinsousuo'  data-original="image/微信.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>微信搜索</p>
+		</div>
+		<div class='sub'>
+			<img id='baiduwenku'  data-original="image/大蛇丸.jpeg" class="subicon"
+			onclick='search(this)' /><p class='subname'>百度文库</p>
+		</div>
+		</div>
+		
+<div class='catalog'>
+		<p class='catalogname'>漫画</p>
+		<div class='top'>
+		<img  id='kumanwang' class="topicon" src="image/酷漫网.ico"   onclick='search(this)' /><p class='topname'>酷漫网</p>
+		</div>
+		<div class='sub'>
+			<img id='zhiyinmanke'  data-original="image/知音漫客.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>知音漫客</p>
+		</div>
+		<div class='sub'>
+			<img id='daimarushi'  data-original="image/鸣人.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>代码如诗</p>
+		</div>
+		<div class='sub'>
+			<img id='cainiaogongju'  data-original="image/编程.ico" class="subicon"
+			onclick='search(this)' /><p class='subname'>在线编程</p>
+		</div>
+		</div>
+		
+			<div class='catalog'>
+		<p class='catalogname'>教育</p>
+		<div class='top'>
+		<img  id='wangyiyunketang' class="topicon" src="image/网易云课堂.jpg"   onclick='search(this)' /><p class='topname'>网易课堂</p>
+		</div>
+		<div class='sub'>
+			<img id='eryaketang'  data-original="image/邪悟空.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>尔雅课堂</p>
+		</div>
+		<div class='sub'>
+			<img id='zhongguodaxueMOOC'  data-original="image/中国大学.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>中国大学</p>
+		</div>
+		<div class='sub'>
+			<img id='mukewang'  data-original="image/慕课网.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>慕课网</p>
+		</div>
+		</div>
+		
+		<div class='catalog'>
+		<p class='catalogname'>社交</p>
+		<div class='top'>
+		<img  id='QQ' class="topicon" src="image/qq.ico"   onclick='search(this)' /><p class='topname'>QQ</p>
+		</div>
+		<div class='sub'>
+			<img id='weixin'  data-original="image/微信.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>微信</p>
+		</div>
+		<div class='sub'>
+			<img id='zhifubao'  data-original="image/支付宝.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>支付宝</p>
+		</div>
+		<div class='sub'>
+			<img id='tieba'  data-original="image/贴吧.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>贴吧</p>
+		</div>
+		</div>
+			<div class='catalog'>
+		<p class='catalogname'>其他</p>
+		<div class='top'>
+		<img  id='huabanwang' class="topicon" src="image/花瓣网.jpg"   onclick='search(this)' /><p class='topname'>花瓣网</p>
+		</div>
+		<div class='sub'>
+			<img id='biyaoshangcheng'  data-original="image/必要.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>必要商城</p>
+		</div>
+		<div class='sub'>
+			<img id='zhongguancundaogou'  data-original="image/中关村.png" class="subicon"
+			onclick='search(this)' /><p class='subname'>中关村导购</p>
+		</div>
+		<div class='sub'>
+			<img id='xingmengyinyue'  data-original="image/星萌音乐.jpg" class="subicon"
+			onclick='search(this)' /><p class='subname'>星萌音乐</p>
+		</div>
+	</div>
+
+	</div>
+
+<div class="rightNav">
+	<a href="http://lackar.com/aa/" class="width" style="right: -110px; title="支持原作者" target="_blank"><em>AA网链接</em><img src="image/2.ico" alt="支持原作者" width="80" height="80" border="0" title="原作者"></a>
+</div>
+<script type="text/javascript">
+	var btb=$(".rightNav");
+	var tempS;
+	$(".rightNav").hover(function(){
+			var thisObj = $(this);
+			tempS = setTimeout(function(){
+			thisObj.find("a").each(function(i){
+				var tA=$(this);
+				setTimeout(function(){ tA.animate({right:"0"},300);},50*i);
+			});
+		},200);
+
+	},function(){
+		if(tempS){ clearTimeout(tempS); }
+		$(this).find("a").each(function(i){
+			var tA=$(this);
+			setTimeout(function(){ tA.animate({right:"-110"},300,function(){
+			});},50*i);
+		});
+
+	});
+	var isIE6 = !!window.ActiveXObject&&!window.XMLHttpRequest;
+	if( isIE6 ){ $(window).scroll(function(){ btb.css("top", $(document).scrollTop()+100) }); }
+</script>
+<br>
+	
+
+		
+<script src="js/jquery.min.js"></script>
+<script src="js/lazyload.min.js"></script>
+<script type="text/javascript" src="js/open_link.js"></script>`
+<script type="text/javascript" src="js/min.js"></script>
+
+		<script src="assets/countdown/jquery.countdown.js"></script>
+		<script src="assets/js/script.js"></script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+———————————————如有侵权请告知———QQ:827773490——微信：woxiansaoyiwu————————————>【<a href="http://www.baidu.com/s?wd=天气"target="_blank">天气</a>】【<a href="http://www.baidu.com/s?wd=日历"target="_blank">日历</a>】【<a href="http://top.baidu.com/"target="_blank">搜索风云榜</a>】【<a href="http://ilxdh.com/"target="_blank">龙轩导航</a>】
+</body>
+</html>
