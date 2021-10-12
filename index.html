@@ -3,96 +3,143 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name=http-equiv="expires" content="604800">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>周新闻的工具箱</title>
     <style>
-        table {
-            /* border: 1px solid black; */
+        * {
+            padding: 0;
+            margin: 0;
         }
         
         td {
             text-align: center;
             font-size: 5px;
-            /* padding-left: 20px; */
-            /* padding-right: 20px; */
+        }
+        
+        .box {
+            max-width: 500px;
+            width: 100%;
+            height: 200px;
+            background-color: rgb(230, 230, 230);
+            float: left;
+        }
+        
+        .title {
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: rgb(200, 200, 200);
+        }
+        
+        .main {
+            padding-left: 20px;
         }
     </style>
 </head>
 
 <body>
-    <input type="text" placeholder="输入不合格品瓶数" id="dis_count"><br/>
-    <input type="text" placeholder="输入总瓶数" id="all_count">
-    <input type="button" value="提交" id="btn">
-    <table border="1" cellspacing="0" cellpadding="0">
-        <thead>
-            <tr>
-                <th colspan="7">严重缺陷</th>
-                <th colspan="4">主要缺陷</th>
-                <th colspan="4">一般缺陷</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td id="t1" colspan="7"></td>
-                <td id="t2" colspan="4"></td>
-                <td id="t3" colspan="4"></td>
-            </tr>
-            <tr>
-                <td id="v11">0</td>
-                <td id="v12"></td>
-                <td id="v13"></td>
-                <td id="v14"></td>
-                <td id="v15"></td>
-                <td id="v16"></td>
-                <td id="v17"></td>
-                <td id="v21"></td>
-                <td id="v22"></td>
-                <td id="v23"></td>
-                <td id="v24"></td>
-                <td id="v31"></td>
-                <td id="v32"></td>
-                <td id="v33"></td>
-                <td id="v34"></td>
-            </tr>
-            <tr>
-                <td colspan="7" id="per1"></td>
-                <td colspan="4" id="per2"></td>
-                <td colspan="4" id="per3"></td>
-            </tr>
+    <div class="box">
+        <div class="title">随机数生成器</div>
+        <div class="main">
+            <input type="text" placeholder="输入不合格品瓶数" id="dis_count"><br/>
+            <input type="text" placeholder="输入总瓶数" id="all_count">
+            <input type="button" value="提交" id="btn">
+            <table border="1" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th colspan="7">严重缺陷</th>
+                        <th colspan="4">主要缺陷</th>
+                        <th colspan="4">一般缺陷</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="t1" colspan="7"></td>
+                        <td id="t2" colspan="4"></td>
+                        <td id="t3" colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td id="v11">0</td>
+                        <td id="v12"></td>
+                        <td id="v13"></td>
+                        <td id="v14"></td>
+                        <td id="v15"></td>
+                        <td id="v16"></td>
+                        <td id="v17"></td>
+                        <td id="v21"></td>
+                        <td id="v22"></td>
+                        <td id="v23"></td>
+                        <td id="v24"></td>
+                        <td id="v31"></td>
+                        <td id="v32"></td>
+                        <td id="v33"></td>
+                        <td id="v34"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" id="per1"></td>
+                        <td colspan="4" id="per2"></td>
+                        <td colspan="4" id="per3"></td>
+                    </tr>
 
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="box">
+        <div class="title">时间差计算器</div>
+        <div class="main">
+            开始时间： <input type="text" id="start" value=""><br/> 结束时间：
+            <input type="text" id="end" value="">
+            <input type="button" value="提交" id="btn2">
+            <table>
+                <tr>
+                    <td>开始时间</td>
+                    <td id="start_out"></td>
+                </tr>
+                <tr>
+                    <td>结束时间</td>
+                    <td id="end_out"></td>
+                </tr>
+                <tr>
+                    <td>时间差</td>
+                    <td id="res_out"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
     <script>
+        //计算随机数
         var btn = document.getElementById('btn')
         btn.onclick = function() {
+            //获取不合格品输入值
             var inp = document.getElementById('dis_count')
             inp = parseInt(inp.value)
             var sum = inp;
+            //各个缺陷所占百分比
             var tc1 = 0.152;
             var tc2 = 0.368;
             var tc3 = 0.48;
+            //计算一二缺陷个数
             var total1 = sum * tc1;
             var total2 = sum * tc2;
-            // var total1 = 1000;
-
-            // var v3 = 1000 * su1 * Math.random();
+            //计算第三缺陷个数
             t1 = parseInt(total1);
             t2 = parseInt(total2);
             var total3 = sum - t2 - t1;
             t3 = parseInt(total3)
-
-            // v3 = parseInt(v3);
-            // var v3 = 1000 - v1 - v2;
-            // console.log(v1);
-            // console.log(v2);
-            // console.log(v3);
-            // console.log(v3);
+                //获取三大缺陷个数输出框
             var t1v = document.getElementById('t1');
             var t2v = document.getElementById('t2');
             var t3v = document.getElementById('t3');
+            //输出严重，主要，一般缺陷个数
             t1v.innerHTML = t1;
             t2v.innerHTML = t2;
             t3v.innerHTML = t3;
+            //获取各个缺陷输出框
             var v11v = document.getElementById('v11')
             var v12v = document.getElementById('v12')
             var v13v = document.getElementById('v13')
@@ -108,109 +155,142 @@
             var v32v = document.getElementById('v32')
             var v33v = document.getElementById('v33')
             var v34v = document.getElementById('v34')
-                // var su1 = 0.;
-            var su12 = 0.2;
-            var su13 = 0.2;
-            var su14 = 0.2;
-            var su15 = 0.2;
-            var su16 = 0.2;
-            var su21 = 0.4;
-            var su22 = 0.3;
-            var su23 = 0.3;
-            var su31 = 0.4;
-            var su32 = 0.3;
-            var su33 = 0.3;
 
-            // var su7 = 0.2;
+            //第一次计算，进入循环
+            var v17 = -1;
+            var v24 = -1;
+            var v34 = -1;
+            //
+            //生产严重缺陷的随机数
+            while (v17 > total1 / 4 || v17 < total1 / 8) { //如果第7个数小于0，说明随机数取值过大，需重新取
+                //生成前六位的随机数，范围为0~严重缺陷数
+                var v12 = total1 * Math.random();
+                var v13 = total1 * Math.random();
+                var v14 = total1 * Math.random();
+                var v15 = total1 * Math.random();
+                var v16 = total1 * Math.random();
+                //随机数转为整数，好计算
+                v12 = parseInt(v12);
+                v13 = parseInt(v13);
+                v14 = parseInt(v14);
+                v15 = parseInt(v15);
+                v16 = parseInt(v16);
+                //用总数减去前六个数，算出第七个数
+                v17 = t1 - v12 - v13 - v14 - v15 - v16;
+                //获取表格id
+                var v12v = document.getElementById('v12');
+                var v13v = document.getElementById('v13');
+                var v14v = document.getElementById('v14');
+                var v15v = document.getElementById('v15');
+                var v16v = document.getElementById('v16');
+                var v17v = document.getElementById('v17');
+                //将计算的值输入表格id
+                v12v.innerHTML = v12;
+                v13v.innerHTML = v13;
+                v14v.innerHTML = v14;
+                v15v.innerHTML = v15;
+                v16v.innerHTML = v16;
+                v17v.innerHTML = v17;
 
-            // var su3 = 0.3;
-            // var v11 = total1 * su1 * Math.random();
-            var v12 = total1 * su12 * Math.random();
-            var v13 = total1 * su13 * Math.random();
-            var v14 = total1 * su14 * Math.random();
-            var v15 = total1 * su15 * Math.random();
-            var v16 = total1 * su16 * Math.random();
-            // var v17 = total1 * su7 * Math.random();
-            var v21 = total2 * su21 * Math.random();
-            var v22 = total2 * su22 * Math.random();
-            var v23 = total2 * su23 * Math.random();
-            //
-            var v31 = total3 * su31 * Math.random();
-            var v32 = total3 * su32 * Math.random();
-            var v33 = total3 * su33 * Math.random();
-            // v11 = parseInt(v11);
-            v12 = parseInt(v12);
-            v13 = parseInt(v13);
-            v14 = parseInt(v14);
-            v15 = parseInt(v15);
-            v16 = parseInt(v16);
-            // v17 = parseInt(v17);
-            v21 = parseInt(v21);
-            v22 = parseInt(v22);
-            v23 = parseInt(v23);
-            //
-            v31 = parseInt(v31);
-            v32 = parseInt(v32);
-            v33 = parseInt(v33);
+            }
+            //生产主要缺陷的随机数，逻辑同上
+            while (v24 < total2 / 6 || v24 > total2 / 2) {
+                var v21 = total2 * Math.random();
+                var v22 = total2 * Math.random();
+                var v23 = total2 * Math.random();
 
-            //
-            v17 = t1 - v12 - v13 - v14 - v15 - v16;
-            v24 = t2 - v21 - v22 - v23;
-            v34 = t3 - v31 - v32 - v33;
-            // var v11v = document.getElementById('v11');
-            var v12v = document.getElementById('v12');
-            var v13v = document.getElementById('v13');
-            var v14v = document.getElementById('v14');
-            var v15v = document.getElementById('v15');
-            var v16v = document.getElementById('v16');
-            var v17v = document.getElementById('v17');
-            //
-            var v21v = document.getElementById('v21');
-            var v22v = document.getElementById('v22');
-            var v23v = document.getElementById('v23');
-            var v24v = document.getElementById('v24');
-            //
-            var v31v = document.getElementById('v31');
-            var v32v = document.getElementById('v32');
-            var v33v = document.getElementById('v33');
-            var v34v = document.getElementById('v34');
+                v21 = parseInt(v21);
+                v22 = parseInt(v22);
+                v23 = parseInt(v23);
 
+                v24 = t2 - v21 - v22 - v23;
+                var v21v = document.getElementById('v21');
+                var v22v = document.getElementById('v22');
+                var v23v = document.getElementById('v23');
+                var v24v = document.getElementById('v24');
+                v21v.innerHTML = v21;
+                v22v.innerHTML = v22;
+                v23v.innerHTML = v23;
+                v24v.innerHTML = v24;
 
+            }
+            //生产一般缺陷的随机数，逻辑同上
+            while (v34 < total3 / 6 || v34 > total3 / 2) {
+                var v31 = total3 * Math.random();
+                var v32 = total3 * Math.random();
+                var v33 = total3 * Math.random();
+                v31 = parseInt(v31);
+                v32 = parseInt(v32);
+                v33 = parseInt(v33);
+                v34 = t3 - v31 - v32 - v33;
+                var v31v = document.getElementById('v31');
+                var v32v = document.getElementById('v32');
+                var v33v = document.getElementById('v33');
+                var v34v = document.getElementById('v34');
+                v31v.innerHTML = v31;
+                v32v.innerHTML = v32;
+                v33v.innerHTML = v33;
+                v34v.innerHTML = v34;
 
-            // v11v.innerHTML = v11;
-            v12v.innerHTML = v12;
-            v13v.innerHTML = v13;
-            v14v.innerHTML = v14;
-            v15v.innerHTML = v15;
-            v16v.innerHTML = v16;
-            v17v.innerHTML = v17;
-            //
-            v21v.innerHTML = v21;
-            v22v.innerHTML = v22;
-            v23v.innerHTML = v23;
-            v24v.innerHTML = v24;
-            //
-            v31v.innerHTML = v31;
-            v32v.innerHTML = v32;
-            v33v.innerHTML = v33;
-            v34v.innerHTML = v34;
+            }
 
+            // 计算百分比
+            //获取百分比输出框
             var per1 = document.getElementById('per1');
             var per2 = document.getElementById('per2');
             var per3 = document.getElementById('per3');
+            //获取总数数据
             var inp2 = document.getElementById('all_count');
+            //将总数数据取整
             inp2 = parseInt(inp2.value)
+                //计算百分比
             var per1v = t1 / inp2 * 100;
             var per2v = t2 / inp2 * 100;
             var per3v = t3 / inp2 * 100;
-            per1v = parseFloat(per1v);
-            per2v = parseFloat(per2v);
-            per3v = parseFloat(per3v);
-
+            //将百分比转换为浮点数
+            per1v = parseFloat(per1v).toFixed(5);
+            per2v = parseFloat(per2v).toFixed(5);
+            per3v = parseFloat(per3v).toFixed(5);
+            //输出百分比
             per1.innerHTML = per1v + '%';
             per2.innerHTML = per2v + '%';
             per3.innerHTML = per3v + '%';
 
+        }
+
+
+
+
+
+        //时间减法
+
+        now = new Date();
+        start = document.getElementById('start');
+        end = document.getElementById('end');
+        showTime = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate() + ' ' + now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+        start.value = showTime;
+        end.value = showTime;
+        var btn2 = document.getElementById('btn2');
+        btn2.onclick = function() {
+            t_start = start.value;
+            t_end = end.value;
+            t_start = new Date(t_start);
+            t_end = new Date(t_end);
+            t_start_t = t_start.getTime();
+            t_end_t = t_end.getTime();
+            res = t_end_t - t_start_t;
+            res_h = res / (60 * 60 * 1000);
+            res_m = (res % (60 * 60 * 1000)) / 60000;
+            res_h = parseInt(res_h);
+            res_m = parseInt(res_m);
+            res = res_h + '小时' + res_m + '分钟';
+            var start_out = document.getElementById('start_out');
+            var end_out = document.getElementById('end_out');
+            var res_out = document.getElementById('res_out');
+            start_out.innerHTML = start.value;
+            end_out.innerHTML = end.value;
+            res_out.innerHTML = res;
+            // console.log(t1.getTime());
         }
     </script>
 </body>
