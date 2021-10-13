@@ -120,8 +120,8 @@
             inp = parseInt(inp.value)
             var sum = inp;
             //各个缺陷所占百分比
-            var tc1 = 0.152;
-            var tc2 = 0.368;
+            var tc1 = 0.069;
+            var tc2 = 0.232;
             var tc3 = 0.48;
             //计算一二缺陷个数
             var total1 = sum * tc1;
@@ -196,8 +196,8 @@
             //生产主要缺陷的随机数，逻辑同上
             while (v24 < total2 / 6 || v24 > total2 / 2) {
                 var v21 = total2 * Math.random();
-                var v22 = total2 * Math.random();
-                var v23 = total2 * Math.random();
+                var v22 = 50 * Math.random();
+                var v23 = 50 * Math.random();
 
                 v21 = parseInt(v21);
                 v22 = parseInt(v22);
@@ -209,9 +209,9 @@
                 var v23v = document.getElementById('v23');
                 var v24v = document.getElementById('v24');
                 v21v.innerHTML = v21;
-                v22v.innerHTML = v22;
+                v22v.innerHTML = v24;
                 v23v.innerHTML = v23;
-                v24v.innerHTML = v24;
+                v24v.innerHTML = v22;
 
             }
             //生产一般缺陷的随机数，逻辑同上
